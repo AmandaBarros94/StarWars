@@ -30,14 +30,15 @@ function FilterNumbers() {
   ];
 
   const handleClick = () => {
-    console.log(value);
     const informationFilter = {
       column,
       comparison: operator,
       value,
     };
-    const resultFilter = filterByNumericValues.find((filter) => filter.column === column);
-    if (!resultFilter) {
+
+    if (filterByNumericValues.includes(column)) {
+      alert('filtro já existente!');
+    } else {
       setColumnFilter(columnArray.filter((item) => item !== column));
       setFilterByNumericValues((prevState) => [...prevState, informationFilter]);
     }
