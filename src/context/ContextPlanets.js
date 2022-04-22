@@ -7,6 +7,7 @@ const ContextPlanets = createContext();
 export const ProviderPlanets = ({ children }) => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState(data);
+  const [filterByNumericValues, setFilterByNumericValues] = useState([]);
 
   const responseApi = useCallback(async () => {
     const response = await fetchListPlanets();
@@ -16,7 +17,39 @@ export const ProviderPlanets = ({ children }) => {
   useEffect(() => {
     responseApi();
   }, [responseApi]);
-  console.log(data);
+
+  const numericFilter = useCallback(() => {
+    let planets = data;
+    filterByNumericValues.forEach((item) => {
+      switch (item.comparison) {
+      case 'maior que':
+        planets = planets.filter((planet) => (
+          Number(planet[item.column]) > Number(item.value)
+        ));
+        break;
+      case 'menor que':
+        planets = planets.filter((planet) => (
+          Number(planet[item.column]) < Number(item.value)
+        ));
+        break;
+      case 'igual a':
+        planets = planets.filter((planet) => (
+          Number(planet[item.column]) === Number(item.value)
+        ));
+        break;
+      default:
+        console.log('não foi selecionado filtro numérico');
+        break;
+      }
+    });
+    return planets;
+  }, [data, filterByNumericValues]);
+
+  useEffect(() => {
+    const conditionFilter = numericFilter();
+    setFilteredData(conditionFilter);
+  }, [numericFilter]);
+
   return (
     <ContextPlanets.Provider
       value={ {
@@ -24,6 +57,8 @@ export const ProviderPlanets = ({ children }) => {
         setData,
         filteredData,
         setFilteredData,
+        filterByNumericValues,
+        setFilterByNumericValues,
       } }
     >
       {children}
