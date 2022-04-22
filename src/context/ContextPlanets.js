@@ -6,6 +6,7 @@ const ContextPlanets = createContext();
 
 export const ProviderPlanets = ({ children }) => {
   const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState(data);
 
   const responseApi = useCallback(async () => {
     const response = await fetchListPlanets();
@@ -21,6 +22,8 @@ export const ProviderPlanets = ({ children }) => {
       value={ {
         data,
         setData,
+        filteredData,
+        setFilteredData,
       } }
     >
       {children}
