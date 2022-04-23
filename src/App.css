@@ -41,12 +41,11 @@
 }
 
 .starwars {
-  color: white;
   color: black;
   font-size: 60px;
   margin: 0 auto;
   padding: 15px;
-  text-shadow: -1px -1px 0 #fff , -1px 1px 0 #fff , 1px -1px 0 #fff , 1px 0 0 #fff;
+  text-shadow: -1px -1px 0 white , -1px 1px 0 white , 1px -1px 0 white , 1px 0 0 white;
 }
 
 input, button {
