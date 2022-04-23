@@ -45,7 +45,7 @@ function FilterNumbers() {
   };
 
   return (
-    <div>
+    <div className="filterone">
       <select
         data-testid="column-filter"
         onChange={ (event) => setColumn(event.target.value) }

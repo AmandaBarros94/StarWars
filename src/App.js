@@ -8,12 +8,16 @@ import { ProviderPlanets } from './context/ContextPlanets';
 function App() {
   return (
 
-    <ProviderPlanets>
-      <SearchPlanets />
-      <FilterNumbers />
-      <Table />
-
-    </ProviderPlanets>
+    <div className="App">
+      <ProviderPlanets>
+        <h2 className="starwars">STAR WARS PLANETS</h2>
+        <div className="headTable">
+          <SearchPlanets />
+          <FilterNumbers />
+        </div>
+        <Table />
+      </ProviderPlanets>
+    </div>
 
   );
 }

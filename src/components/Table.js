@@ -4,9 +4,9 @@ import ContextPlanets from '../context/ContextPlanets';
 function Table() {
   const { data, filteredData } = useContext(ContextPlanets);
   return (
-    <table>
+    <table className="table0">
       <thead>
-        <tr>
+        <tr className="tableHead">
           <th>Name</th>
           <th>Rotation Period</th>
           <th>Orbital Period</th>
@@ -26,7 +26,7 @@ function Table() {
         {(filteredData.length === 0 ? data : filteredData)
           .filter(() => filteredData)
           .map((item) => (
-            <tr key={ item.name }>
+            <tr className="tableBody" key={ item.name }>
               <td>{item.name}</td>
               <td>{item.rotation_period}</td>
               <td>{item.orbital_period}</td>

@@ -1,41 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.table0 {
+  background-color: rgba(255, 255, 255, 0.178);
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media ( prefers-reduced-motion : no-preference ) {
-
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  align-items: center;
-  background-color: #282c34;
+  background-image: url('https://c.wallhere.com/photos/20/d3/2560x1440_px_AT_Death_Star_Night_Sky_space_Star_Wars-1347845.jpg!d');
   color: white;
+  height: 100vh;
+  overflow-y: auto;
+  text-align: center;
+
+}
+
+.filterone {
   display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  justify-content: center;
-  min-height: 100vh;
+  justify-content: space-between;
+  width: 80vw;
 }
 
-.App-link {
-  color: #61dafb;
+.tableHead {
+  background-color: black;
 }
 
-@keyframes App-logo-spin {
+.tableBody {
+  background-color: rgba(0, 0, 0, 0.507);
+}
 
-  from {
-    transform: rotate(0deg);
-  }
+.headTable {
+  background-color: rgba(71, 93, 124, 0.521);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 18px;
+  padding: 10px;
+}
 
-  to {
-    transform: rotate(360deg);
-  }
+.starwars {
+  color: white;
+  color: black;
+  font-size: 60px;
+  margin: 0 auto;
+  text-shadow: -1px -1px 0 #fff , -1px 1px 0 #fff , 1px -1px 0 #fff , 1px 0 0 #fff;
+}
+
+input, button, select {
+  border-radius: 5px;
+  padding: 3px;
+  width: 93px;
+  font-size: 12px;
+  text-align: center;
 }
