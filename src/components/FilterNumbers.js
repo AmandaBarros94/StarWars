@@ -35,10 +35,9 @@ function FilterNumbers() {
       comparison: operator,
       value,
     };
+    const resultFilter = filterByNumericValues.find((filter) => filter.column === column);
 
-    if (filterByNumericValues.includes(column)) {
-      alert('filtro já existente!');
-    } else {
+    if (!resultFilter) {
       setColumnFilter(columnArray.filter((item) => item !== column));
       setFilterByNumericValues((prevState) => [...prevState, informationFilter]);
     }
